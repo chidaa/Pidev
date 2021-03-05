@@ -85,7 +85,7 @@
         "version": "v1.0.3"
     },
     "laminas/laminas-code": {
-        "version": "3.4.1"
+        "version": "4.0.0"
     },
     "laminas/laminas-eventmanager": {
         "version": "3.3.0"
@@ -98,9 +98,6 @@
     },
     "nikic/php-parser": {
         "version": "v4.10.4"
-    },
-    "php": {
-        "version": "7.3"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
