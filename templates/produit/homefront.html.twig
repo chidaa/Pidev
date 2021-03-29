@@ -1,8 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'fronts.html.twig' %}
 {% block body %}
 
-
-    <!-- Content-->
 
 
 
@@ -31,54 +29,51 @@
                     <div class="card-body">
                         <div class="container-fluid">
                             <div class="row mb-2">
-                                <div class="col-sm-6">
-                                    <a href="{{ path('produit_add') }}"  class="btn btn-success" >Ajouter un nouveau produit !</a>
-                                </div>
 
                             </div>
-
-                            <form method="post" action="{{ path ('rechercheprod') }}">
-                                <label>Rechercher</label>
-                                <input type="text" name="search"><input type="submit" value="Recherche">
-                            </form>
-                            <a class="dropdown-item" href="{{ path('showproduit') }}">Filtred by name</a>
-
-
-
-
-                            </form>
                             {% if produits %}
                             <div class="card-body table-responsive p-0">
                                 <table id="#example1" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
-                                        <th>Id</th>
+
                                         <th>Nom</th>
                                         <th>Quantité</th>
                                         <th>Prix</th>
-                                        <th>Categories</th>
+                                        <th>Catégorie</th>
+                                        <th>Rating</th>
+
                                     </tr>
                                     </thead>
                                     <tbody>
                                     {% for produits in produits %}
                                         <tr>
-                                            <td>{{ produits.id }}</td>
+
                                             <td>{{ produits.nom }}</td>
-                                            <td><span {{ produits.quantite <= 10 ? 'class="badge badge-danger pull-right"' : 'class="badge badge-primary pull-right"' }}>{{ produits.quantite }}</span>  </td>
+                                            <td>{{ produits.quantite }}</td>
                                             <td>{{ produits.prix }}</td>
-
                                             <td>{{ produits.categories.nom }}</td>
-
-                                            <td align="center">
-                                                <a href="{{ path('produit_edit',{'id':produits.id }) }}" class="btn btn-warning"> <i class="fas fa-pencil-alt"></i> Modifier</a>
-                                                <a href="{{ path('produit_delete',{'id':produits.id }) }}" class="btn btn-danger" onclick="return confirm('Voulez vous vraiment supprimer cet utilisateur ?')"> <i class="fas fa-trash"></i> Supprimer</a>
+                                            <td>
+                                                <div class="rate">
+                                                    <input type="radio" id="star5" name="rate" value="5" />
+                                                    <label for="star5" title="text">5 stars</label>
+                                                    <input type="radio" id="star4" name="rate" value="4" />
+                                                    <label for="star4" title="text">4 stars</label>
+                                                    <input type="radio" id="star3" name="rate" value="3" />
+                                                    <label for="star3" title="text">3 stars</label>
+                                                    <input type="radio" id="star2" name="rate" value="2" />
+                                                    <label for="star2" title="text">2 stars</label>
+                                                    <input type="radio" id="star1" name="rate" value="1" />
+                                                    <label for="star1" title="text">1 star</label>
+                                                </div>
                                             </td>
+
                                         </tr>
                                     {% endfor %}
                                     </tbody>
                                 </table>
                                 {% else %}
-                                    <p>Aucun produit n'a été trouvé</p>
+                                    <p>Aucun utilisateur n'a été trouvé</p>
                                 {% endif %}
                                 <br>
                                 {#                                <div class="navigation">#}
@@ -93,4 +88,12 @@
     </section>
 
 
+{% endblock %}
+{% block javascripts %}
+<script>$(function() {
+$(".heart").on("click", function() {
+$(this).toggleClass("is-active");
+});
+});
+    </script>
 {% endblock %}

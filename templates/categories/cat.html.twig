@@ -2,10 +2,6 @@
 {% block body %}
 
 
-    <!-- Content-->
-
-
-
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -14,7 +10,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         {#                        <li class="breadcrumb-item"><a href="{{ path('admin') }}">Home</a></li>#}
-                        <li class="breadcrumb-item active">Produits</li>
+                        <li class="breadcrumb-item active">Catégories</li>
                     </ol>
                 </div>
             </div>
@@ -25,60 +21,45 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Table des produits</h3>
+                        <h3 class="card-title">Table des catégories</h3>
                     </div>
 
                     <div class="card-body">
                         <div class="container-fluid">
                             <div class="row mb-2">
                                 <div class="col-sm-6">
-                                    <a href="{{ path('produit_add') }}"  class="btn btn-success" >Ajouter un nouveau produit !</a>
+                                    <a href="{{ path('categorie_add') }}"  class="btn btn-success" >Ajouter une catégorie  !</a>
                                 </div>
 
                             </div>
 
-                            <form method="post" action="{{ path ('rechercheprod') }}">
-                                <label>Rechercher</label>
-                                <input type="text" name="search"><input type="submit" value="Recherche">
-                            </form>
-                            <a class="dropdown-item" href="{{ path('showproduit') }}">Filtred by name</a>
 
-
-
-
-                            </form>
-                            {% if produits %}
+                            {% if categories %}
                             <div class="card-body table-responsive p-0">
                                 <table id="#example1" class="table table-bordered table-striped">
                                     <thead>
                                     <tr>
                                         <th>Id</th>
                                         <th>Nom</th>
-                                        <th>Quantité</th>
-                                        <th>Prix</th>
-                                        <th>Categories</th>
+
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {% for produits in produits %}
-                                        <tr>
-                                            <td>{{ produits.id }}</td>
-                                            <td>{{ produits.nom }}</td>
-                                            <td><span {{ produits.quantite <= 10 ? 'class="badge badge-danger pull-right"' : 'class="badge badge-primary pull-right"' }}>{{ produits.quantite }}</span>  </td>
-                                            <td>{{ produits.prix }}</td>
+                                    {% for categories in categories %}
 
-                                            <td>{{ produits.categories.nom }}</td>
+                                        <tr>
+                                            <td>{{ categories.id }}</td>
+                                            <td>{{ categories.nom }}</td>
 
                                             <td align="center">
-                                                <a href="{{ path('produit_edit',{'id':produits.id }) }}" class="btn btn-warning"> <i class="fas fa-pencil-alt"></i> Modifier</a>
-                                                <a href="{{ path('produit_delete',{'id':produits.id }) }}" class="btn btn-danger" onclick="return confirm('Voulez vous vraiment supprimer cet utilisateur ?')"> <i class="fas fa-trash"></i> Supprimer</a>
+                                                <a href="{{ path('Categorie_delete',{'id':categories.id }) }}" class="btn btn-danger" onclick="return confirm('Voulez vous vraiment supprimer cet catégorie ?')"> <i class="fas fa-trash"></i> Supprimer</a>
                                             </td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
                                 </table>
                                 {% else %}
-                                    <p>Aucun produit n'a été trouvé</p>
+                                    <p>Aucun utilisateur n'a été trouvé</p>
                                 {% endif %}
                                 <br>
                                 {#                                <div class="navigation">#}
@@ -91,6 +72,7 @@
             </div>
         </div>
     </section>
+
 
 
 {% endblock %}

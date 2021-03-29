@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\ProduitsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=ProduitsRepository::class)
@@ -19,6 +21,12 @@ class Produits
 
     /**
      * @ORM\Column(type="string", length=255)
+     *  @Assert\Length(
+     *      min = 5,
+     *      max = 50,
+     *      minMessage = "Your Title must be at least {{ limit }} characters long",
+     *      maxMessage = "Your  Title cannot be longer than {{ limit }} characters"
+     * )
      */
     private $nom;
 
@@ -34,10 +42,11 @@ class Produits
 
     /**
      * @ORM\ManyToOne(targetEntity=Categories::class, inversedBy="produits")
+     * @ORM\JoinColumn(name="categories_id", onDelete="CASCADE")
      */
-    private $categories;
+    public $categories;
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
@@ -89,4 +98,13 @@ class Produits
 
         return $this;
     }
+
+
+    public function __toString(): string
+    {
+        return 'categories';
+    }
+
+
+
 }

@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Categories;
 use App\Entity\Produits;
 use App\Form\Type\ProduitsType;
+use App\Repository\ProduitsRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,14 +30,26 @@ class   ProduitController extends AbstractController
         return $this->render('produit/home.html.twig');
     }
     /**
-     * @Route("/", name="produit_list", methods={"GET", "POST"})
+     * @Route("/home", name="produit_listt", methods={"GET", "POST"})
      */
     public function list( Request $request)
     {
 
         $repository = $this->getDoctrine()->getRepository(Produits::class);
         $items = $repository->findAll();
-        return $this->render('produit/home.html.twig',['produits'=> $items]);
+        $repository1 = $this->getDoctrine()->getRepository(Categories::class);
+
+        return $this->render('produit/home.html.twig',['produits'=> $items,'categories'=> $items]);
+    }
+    /**
+     * @Route("/front", name="produit_list", methods={"GET", "POST"})
+     */
+    public function listfront( Request $request)
+    {
+
+        $repository = $this->getDoctrine()->getRepository(Produits::class);
+        $items = $repository->findAll();
+        return $this->render('produit/homefront.html.twig',['produits'=> $items]);
     }
     /**
      * @Route("/addProduct", name="produit_add")
@@ -49,7 +63,7 @@ class   ProduitController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($produit);
             $entityManager->flush();
-            return $this->redirectToRoute('produit_list');
+            return $this->redirectToRoute('produit_listt');
         }
         return $this->render('produit/ajouterProduit.html.twig', array(
             'format' => $form->createView(),
@@ -70,7 +84,7 @@ class   ProduitController extends AbstractController
 
             $em->persist($produit);
             $em->flush();
-            return $this->redirectToRoute('produit_list');
+            return $this->redirectToRoute('produit_listt');
         }
 
         return $this->render('Produit/modifierProduit.html.twig', [
@@ -86,7 +100,32 @@ class   ProduitController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->remove($produits);
         $em->flush();
-        return $this->redirectToRoute('produit_list');
+        return $this->redirectToRoute('produit_listt');
     }
+
+    /**
+     * @Route ("/rechercheprod",name="rechercheprod")
+     */
+    public function recherche(ProduitsRepository $repository , Request $request)
+    {
+        $data=$request->get('search');
+        $produits=$repository->SearchName($data);
+        return $this->render('produit/home.html.twig',array('produits' => $produits));
+    }
+
+    /**
+     * @Route("/listeproduit", name="showproduit")
+     */
+
+    public function filterbyname()
+    {
+        $produit = $this->getDoctrine()->getRepository(Produits::class)->listOrderByName();
+        return $this->render("produit/home.html.twig", array('produits' => $produit));
+
+    }
+
+
+
+
 
 }
