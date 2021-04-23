@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/pidev/src/prodcat/entity/Produits.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/pidev/src/prodcat/gui/AfficherProduitsController.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/pidev/src/prodcat/entity/Category.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/pidev/src/prodcat/utils/DataSource.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/pidev/src/prodcat/services/CategoryServices.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/pidev/src/prodcat/services/ProduitsServices.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/pidev/src/prodcat/gui/AfficherCatgoryController.java</file>
+            <file>file:/C:/Users/USER/Documents/NetBeansProjects/pidev/src/prodcat/gui/ModifierProduitsController.java</file>
+        </group>
+    </open-files>
+</project-private>

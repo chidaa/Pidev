@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="614.0" prefWidth="1011.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prodcat.gui.AjouterProduitsController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fill="#f80707" layoutX="407.0" layoutY="69.0" stroke="#f80606" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez ajouter un produit" textAlignment="CENTER" wrappingWidth="250.2265625">
+         <font>
+            <Font name="Arial" size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="94.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" />
+      <Text layoutX="90.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantité" />
+      <Text layoutX="97.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" />
+      <Text layoutX="88.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Categorie" />
+      <Button fx:id="Ajouter_btn" layoutX="407.0" layoutY="503.0" mnemonicParsing="false" onAction="#Add" prefHeight="32.0" prefWidth="159.0" text="Valider" />
+      <TextField fx:id="nom_text" layoutX="164.0" layoutY="170.0" onKeyPressed="#nomcheck" />
+      <TextField fx:id="quantite_text" layoutX="164.0" layoutY="224.0" />
+      <TextField fx:id="prix_text" layoutX="164.0" layoutY="269.0" />
+      <Label layoutX="88.0" layoutY="334.0" prefHeight="17.0" prefWidth="51.0" text="Image" />
+      <Button fx:id="image" layoutX="162.0" layoutY="330.0" mnemonicParsing="false" onAction="#upload" prefHeight="25.0" prefWidth="149.0" text="Selectionner" />
+      <ImageView fx:id="imageview" fitHeight="268.0" fitWidth="517.0" layoutX="472.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" />
+      <ComboBox fx:id="cat_up" layoutX="164.0" layoutY="390.0" prefWidth="150.0" />
+      <ImageView fx:id="nomcheck" fitHeight="32.0" fitWidth="33.0" layoutX="323.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="150.0" fitWidth="457.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/176499694_552350442822825_1906814047457206300_n.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="126.0" layoutX="305.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/new.png" />
+         </image>
+      </ImageView>
+   </children>
+   <effect>
+      <Blend />
+   </effect>
+</AnchorPane>
