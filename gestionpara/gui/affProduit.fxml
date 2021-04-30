@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionpara.gui.AffProduitController">
+   <children>
+      <TableView fx:id="table" layoutX="320.0" layoutY="31.0" prefHeight="352.0" prefWidth="221.0">
+        <columns>
+          <TableColumn fx:id="id_column" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nom_column" prefWidth="75.0" text="NOM" />
+            <TableColumn fx:id="prix_column" prefWidth="75.0" text="PRIX" />
+        </columns>
+      </TableView>
+      <Pane prefHeight="400.0" prefWidth="230.0" style="-fx-background-color: #0f3e0f;">
+         <children>
+            <Button fx:id="ajout_btn" layoutX="9.0" layoutY="167.0" mnemonicParsing="false" onAction="#ajouter_panier" prefHeight="25.0" prefWidth="213.0" text="Ajouter au panier" />
+            <Button fx:id="panier_btn" layoutX="7.0" layoutY="115.0" mnemonicParsing="false" onAction="#GoToPanier" prefHeight="25.0" prefWidth="213.0" text="Mon panier" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

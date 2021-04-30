@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gestionpara.gui.MapCordController">
+   <children>
+      <Button layoutX="134.0" layoutY="330.0" mnemonicParsing="false" onAction="#AfficherMap" prefHeight="25.0" prefWidth="414.0" text="Localiser">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Text layoutX="14.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Longitude">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="14.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Latitude">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Pane layoutX="356.0" layoutY="24.0" prefHeight="263.0" prefWidth="230.0" style="-fx-background-color: #0f3e0f;">
+         <children>
+            <TextField fx:id="longitude" layoutX="41.0" layoutY="94.0" />
+            <TextField fx:id="latitude" layoutX="41.0" layoutY="150.0" />
+            <Text fill="#fffafa" layoutX="84.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fin">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="111.0" layoutY="24.0" prefHeight="263.0" prefWidth="230.0" style="-fx-background-color: #0f3e0f;">
+         <children>
+            <TextField fx:id="longitude1" layoutX="41.0" layoutY="94.0" />
+            <TextField fx:id="latitude1" layoutX="41.0" layoutY="150.0" />
+            <Text fill="#fffafa" layoutX="70.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Debut">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <CheckBox fx:id="cercle_check" layoutX="213.0" layoutY="301.0" mnemonicParsing="false" onAction="#TestCercle" prefHeight="17.0" prefWidth="242.0" text="Afficher le AreaCercle?">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>

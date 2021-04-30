@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionpara.gui.MailingLivreurController">
+   <children>
+      <Pane layoutX="26.0" layoutY="24.0" prefHeight="355.0" prefWidth="559.0" style="-fx-background-color: #0f3e0f;">
+         <children>
+            <Text fill="#f8f5f5" layoutX="25.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Send to:" />
+            <TextField fx:id="sendTO" layoutX="102.0" layoutY="40.0" />
+            <TextField fx:id="Subject" layoutX="102.0" layoutY="86.0" />
+            <TextArea fx:id="text" layoutX="76.0" layoutY="127.0" prefHeight="200.0" prefWidth="200.0" />
+            <Button layoutX="334.0" layoutY="315.0" mnemonicParsing="false" onAction="#Envoyer" prefHeight="25.0" prefWidth="82.0" text="Envoyer" />
+            <Button fx:id="retour_btn" layoutX="437.0" layoutY="315.0" mnemonicParsing="false" onAction="#GoToAffLiv" prefHeight="25.0" prefWidth="89.0" text="Retour" />
+            <Text fill="#f5efef" layoutX="27.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

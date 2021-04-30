@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionpara.gui.AffPanierController">
+   <children>
+      <TableView fx:id="table" layoutX="335.0" layoutY="14.0" prefHeight="300.0" prefWidth="148.0">
+        <columns>
+          <TableColumn fx:id="pr_column" prefWidth="75.0" text="Produit_id" />
+          <TableColumn fx:id="qt_column" prefWidth="75.0" text="Quantite" />
+        </columns>
+      </TableView>
+      <Button fx:id="confirmer_btn" layoutX="335.0" layoutY="325.0" mnemonicParsing="false" onAction="#passer_commande" prefHeight="25.0" prefWidth="149.0" text="Confirmer la commande" />
+      <Button fx:id="retour" layoutX="335.0" layoutY="361.0" mnemonicParsing="false" onAction="#GoToAffProd" prefHeight="25.0" prefWidth="149.0" text="Retour" />
+      <Pane prefHeight="400.0" prefWidth="258.0" style="-fx-background-color: #0f3e0f;">
+         <children>
+            <TextField fx:id="qt_mod" layoutX="48.0" layoutY="85.0" prefHeight="25.0" prefWidth="160.0" />
+            <Button layoutX="49.0" layoutY="121.0" mnemonicParsing="false" onAction="#modifier" prefHeight="25.0" prefWidth="160.0" text="Modifier" />
+            <TextField fx:id="total" layoutX="57.0" layoutY="259.0" prefHeight="58.0" prefWidth="149.0" />
+            <Button fx:id="supp_btn" layoutX="48.0" layoutY="156.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="25.0" prefWidth="160.0" text="Supprimer" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

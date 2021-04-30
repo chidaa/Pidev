@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="393.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionpara.gui.AffLivraisonController">
+   <children>
+      <TableView fx:id="table" layoutX="236.0" layoutY="14.0" prefHeight="225.0" prefWidth="511.0">
+         <columns>
+            <TableColumn fx:id="column_id" prefWidth="75.0" text="ID" />
+            <TableColumn fx:id="column_etat" prefWidth="75.0" text="Etat" />
+            <TableColumn fx:id="column_date" prefWidth="105.0" text="Date Livraison" />
+            <TableColumn fx:id="column_prix" prefWidth="102.0" text="Prix Total" />
+            <TableColumn fx:id="commande_id" prefWidth="75.0" text="commande_id" />
+            <TableColumn fx:id="livreur_id" prefWidth="75.0" text="livreur_id" />
+         </columns>
+      </TableView>
+      <Button fx:id="supp_btn" layoutX="307.0" layoutY="261.0" mnemonicParsing="false" onAction="#supp" prefHeight="25.0" prefWidth="181.0" text="Supp" />
+      <VBox layoutY="-7.0" prefHeight="408.0" prefWidth="227.0" style="-fx-background-color: #0f3e0f;">
+         <children>
+            <Text fill="#f8f3f3" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFIER" textAlignment="CENTER" underline="true">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Pane prefHeight="28.0" prefWidth="227.0" />
+            <Text fill="#f8f6f6" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+            <TextField fx:id="id_mod" />
+            <Pane prefHeight="22.0" prefWidth="227.0" />
+            <Text fill="#f5f0f0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etat" />
+            <TextField fx:id="etat_mod" />
+            <Pane prefHeight="14.0" prefWidth="227.0" />
+            <Text fill="#fcfafa" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+            <DatePicker fx:id="date_mod" prefHeight="25.0" prefWidth="229.0" />
+            <Pane prefHeight="16.0" prefWidth="227.0" />
+            <Text fill="#ebe9e9" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix total" />
+            <TextField fx:id="prix_mod" />
+            <Pane prefHeight="23.0" prefWidth="227.0" />
+            <Button fx:id="mod_btn" mnemonicParsing="false" onAction="#modifier" prefHeight="25.0" prefWidth="237.0" text="modifier" />
+         </children>
+      </VBox>
+      <Button fx:id="ajout_btn" layoutX="307.0" layoutY="294.0" mnemonicParsing="false" onAction="#GoToLivraison" prefHeight="25.0" prefWidth="181.0" text="Ajout" />
+      <Button fx:id="retour_btn" layoutX="307.0" layoutY="329.0" mnemonicParsing="false" onAction="#GoToDash" prefHeight="25.0" prefWidth="181.0" text="Retour" />
+   </children>
+</AnchorPane>
